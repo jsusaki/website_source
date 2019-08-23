@@ -1,0 +1,55 @@
+.toc {
+    position: fixed;
+    left: 0%;
+    top: 30%;
+    font-size: 0.9em;
+    width: 20%;
+    margin-left: 0px;
+    padding-left: 0px;
+    line-height: 1.3em;
+    max-height: 100%;
+}
+
+.toc h3 {
+    font-weight: bold;
+    font-size: 14pt;
+    padding: 0;
+    margin-left: 25px;
+}
+
+.toc li {
+    list-style: none;
+    margin-left: 8px;
+    margin-top: 2px;
+}
+
+.toc li a {
+    color: rgba(255, 255, 255, 0.9);
+    -webkit-transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.toc li a:hover {
+    color: #000;
+    background-color: #EEE;
+    text-decoration: none;
+}
+
+.toc li a.active {
+    font-weight: bold;
+}
+
+#TableOfContents > ul {
+    list-style-type: none;
+    padding-left: 50px;
+}
+
+#TableOfContents > ul > li ul {
+    list-style-type: none;
+    padding-left: 1em;
+}
+
+

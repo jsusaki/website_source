@@ -1,0 +1,8 @@
+<link rel="stylesheet" media="all" href="{{ "css/home.css" | absURL }}">
+<section id="indexNav">
+    {{ range where .Data.Pages "Section" "home" }}
+    <nav class="nav">
+        {{ .Content }}
+    </nav>
+    {{ end }}
+</section>

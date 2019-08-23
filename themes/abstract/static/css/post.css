@@ -1,0 +1,63 @@
+.title {
+    color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.post__title {
+    text-align: center;
+}
+
+.post__content {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.post__content ul {
+    letter-spacing: 0.03em;
+}
+
+.post__content li {
+    overflow: hidden;
+    position: relative;
+    letter-spacing: 0.03em;
+}
+
+.post__content p a {
+    color: rgba(255, 255, 255, 0.9);
+    -webkit-transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.post__content p a:hover {
+    color: #000;
+    background-color: #EEE;
+    text-decoration: none;
+}
+
+.post__content li a {
+    color: rgba(255, 255, 255, 0.9);
+    -webkit-transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.post__content li a:hover {
+    color: #000;
+    background-color: #EEE;
+    text-decoration: none;
+}
+
+.post__content blockquote > p {
+    border-left: 4px solid rgba(255, 255, 255, 0.9);
+    padding-left: 1em;
+}

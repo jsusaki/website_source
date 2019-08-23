@@ -1,0 +1,70 @@
+baseURL = "https://jsusaki.github.io"
+languageCode = "en-us"
+title = "Abstract Concept"
+theme = "abstract"
+
+canonifyurls = true
+paginate = 3
+pluralizelisttitles = false
+publishDir = "jsusaki.github.io"
+#disqusShortname = "username"
+googleAnalytics = "UA-123-45"
+
+# code highlighting
+pygmentsUseClasses = true
+pygmentsStyle = "api"
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+# main menu
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+[[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+[author]
+    name = "femto"
+
+[params]
+    description = "femto's abstractions"
+    keywords = "mind, brain, machine, computer"
+    images = [""]
+    smartToc = true
+
+# Add footer contents here
+[[params.footer]]
+    name = "Elsewhere"
+    url = false
+[[params.footer]]
+    name = "Contact"
+    url = "mailto:"
+
+[social]
+    twitter = ""
+    facebook = ""
+    facebook_admin = ""
+    linkedin = ""
+    instagram = ""	
+    googleplus = ""
+    github = ""
+    gitlab = ""
+    pinterest = ""
+    tumblr = ""
+    vimeo = ""
+    youtube = ""

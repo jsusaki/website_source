@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    {{ partial "head.html" . }}
+    {{ partial "css.html" . }}
+    {{ partial "js.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
+</head>
+<body>
+    {{ partial "background.html" . }}
+    <main id="main">
+
+        {{ block "main" . }}{{ end }}
+    </main>
+</body>
+</html>

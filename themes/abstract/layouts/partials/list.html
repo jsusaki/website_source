@@ -1,0 +1,23 @@
+<link rel="stylesheet" media="all" href="{{ "css/list.css" | absURL }}">
+<div id="contentInner">
+    <h1 class="title">{{ .Title }}</h1>
+    <section class="articles">
+        {{ range (.Paginator 10).Pages }}
+        <article>
+            <div class="thumb">
+                <a href="{{ .URL }}">
+                    <header>
+                        <div>
+                            <h1> {{ .Title }} </h1>
+                            <p> {{ .Date.Format "2006. 1. 2" }} </p>
+                        </div>
+                    </header>
+                    <p class="img">
+                        {{ with .Params.featured_image }} <img src="{{ . }}"> {{ end }}
+                    </p>
+                </a>
+            </div>
+        </article>
+        {{ end }}
+    </section>
+</div>

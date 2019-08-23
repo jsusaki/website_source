@@ -1,0 +1,36 @@
+<link rel="stylesheet" media="all" href="{{ "css/post.css" | absURL }}">
+<div id="contentInner">
+    <article class="post post--{{ .Params.class }}">
+        <header class="post__title">
+            <h1>{{ .Title }}</h1>
+        </header>
+            {{ partial "toc.html" . }}
+
+        <section class="post__content">
+            {{ .Content }}
+        </section>
+
+        <footer class="post__meta">
+            <span class="post__meta-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006. 1. 2" }}</time></span>
+        </footer>
+    </article>
+    <section class="comment">
+        {{ template "_internal/disqus.html" . }}
+    </section>
+    <nav class="p-pagination">
+        <div class="p-pagination__newer">
+            {{ if .PrevInSection }}
+            <p class="p-pagenation__label">Prev</p>
+            <a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a>
+            {{ else }}
+            {{ end }}
+        </div>
+        <div class="p-pagination__older">
+            {{ if .NextInSection }}
+            <p class="p-pagenation__label">Next</p>
+            <a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a>
+            {{ else }}
+            {{ end }}
+        </div>
+    </nav>
+</div>

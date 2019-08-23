@@ -1,0 +1,73 @@
+<script>
+    function loadPage(newUrl) {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState !== XMLHttpRequest.DONE)
+                return;
+
+            var newDocument = httpRequest.responseXML;
+            if (newDocument === null)
+                return;
+
+            var newContent = httpRequest.responseXML.getElementById("main");
+            if (newContent === null)
+                return;
+
+            document.title = newDocument.title;
+
+            var contentElement = document.getElementById("main");
+            contentElement.replaceWith(newContent);
+
+            // Reload MathJax
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, "main"]);
+        }
+
+        httpRequest.responseType = "document";
+        httpRequest.open("GET", newUrl);
+        httpRequest.send();
+    };
+
+    // Load asynchronously
+    window.onload = function () {
+        document.querySelector("body").addEventListener("click", function (event) {
+            //if (event.target.tagName !== "A")
+                //return;
+
+            // History API needed to make sure back and forward still work
+            if (history === null)
+                return;
+            
+            var newUrl = event.target.href;
+            var domain = window.location.origin;
+ 
+            // If link contain a hash, jump to the same page location
+            if (event.target.hash) {
+                event.preventDefault();
+                window.location.assign(newUrl);
+            } else { // Internal links load asynchronously
+                event.preventDefault();
+                if (event.target.tagName === "A"||
+                    event.target.tagName === "HEADER"||
+                    event.target.tagName === "H1" ||
+                    event.target.tagName === "P")
+                        newUrl = event.target.closest("a").getAttribute("href");
+                
+                // External links open in a new tab                
+                if (newUrl.search(domain) !== 0) {
+                    event.preventDefault();
+                    window.open(newUrl, "_blank");
+                }
+
+                //if (newUrl === undefined)
+                    //return;
+                      
+                loadPage(newUrl);
+                history.pushState(null /*stateObj*/, "" /*title*/, newUrl);
+            }
+        });
+    }
+
+    window.onpopstate = function (event) {
+        loadPage(window.location);
+    }
+</script>

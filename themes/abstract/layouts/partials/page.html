@@ -1,0 +1,14 @@
+<link rel="stylesheet" media="all" href="{{ "css/page.css" | absURL }}">
+<div id="contentInner">
+    <article class="page page--{{ .Params.class }}">
+        <header class="page__title">
+            <h1>{{ .Title }}</h1>
+        </header>
+            {{ partial "toc.html" . }}
+
+        <section class="page__content">
+            {{ .Content }}
+        </section>
+
+    </article>
+</div>
