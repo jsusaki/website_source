@@ -1,0 +1,3 @@
+[submodule "jsusaki.github.io"]
+	path = jsusaki.github.io
+	url = git@github.com:jsusaki/jsusaki.github.io.git
